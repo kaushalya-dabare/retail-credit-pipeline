@@ -9,7 +9,13 @@ from src.transformers import FinancialFeatureEngineer
 def main():
     print('INFO: Starting Execution Pipeline')
 
-    data_path = os.path.join('data', 'raw_credit_data.csv')
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+    data_path = os.path.join(
+        PROJECT_ROOT,
+        'data',
+        'raw_credit_data.csv'
+    )
 
     if not os.path.exists(data_path):
         raise FileNotFoundError(
